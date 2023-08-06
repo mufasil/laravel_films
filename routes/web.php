@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\Film\FilmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('films.index');
+});
+
+Route::prefix('films')->group(function () {
+    Route::get('/', [FilmController::class, 'index'])->name('films.index');
+    Route::get('/{slug}', [FilmController::class, 'show'])->name('films.show');
+    Route::post('/{id}/comments', [FilmController::class, 'storeComments'])->name('films.comments.store');
 });
 
 Auth::routes();

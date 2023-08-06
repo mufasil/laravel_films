@@ -46,6 +46,6 @@ if (!function_exists('uploadImage')) {
         // Move the uploaded image to the public storage folder
         $image->move(public_path('uploads'), $imageName);
 
-        return "upload/" . $imageName;
+        return "uploads/" . $imageName;
     }
 }

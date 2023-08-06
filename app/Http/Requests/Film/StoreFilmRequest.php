@@ -31,7 +31,7 @@ class StoreFilmRequest extends FormRequest
             'ticket_price' => 'required|numeric',
             'genre_id' => 'required|distinct|array|exists:genres,id',
             // 'country' => 'required',
-            // 'photo' => 'required|mimes:jpeg,jpg,png,gif|max:10240'
+            'photo' => 'required|mimes:jpeg,jpg,png,gif|max:10240'
         ];
     }
 }
