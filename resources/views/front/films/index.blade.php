@@ -2,6 +2,9 @@
 @section('content')
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1" id="logout">
+        <a class="btn btn-default btn-circle text-uppercase" href="{{route('films.create')}}">
+            <span class="glyphicon glyphicon-on"></span> Add Film
+        </a>
         @forelse ($films as $film)
         <div class="container">
             <div class="card">
