@@ -42,11 +42,23 @@
             </div>
             <div class="page-header">
                 <h3 class="reviews">Leave your comment</h3>
+                @if (Auth::check())
                 <div class="logout">
-                    <button class="btn btn-default btn-circle text-uppercase" type="button" onclick="$('#logout').hide(); $('#login').show()">
-                        <span class="glyphicon glyphicon-off"></span> Logout
-                    </button>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+                        <button class="btn btn-default btn-circle text-uppercase" type="submit">
+                            <span class="glyphicon glyphicon-off"></span> Logout
+                        </button>
+                    </form>
+
                 </div>
+                @else
+                <div class="logout">
+                    <a class="btn btn-default btn-circle text-uppercase" href="{{route('login')}}">
+                        <span class="glyphicon glyphicon-on"></span> Login
+                    </a>
+                </div>
+                @endif
             </div>
             <div class="comment-tabs">
                 <ul class="nav nav-tabs" role="tablist">
@@ -77,6 +89,7 @@
                         </ul>
                     </div>
                     <div class="tab-pane" id="add-comment">
+                        @if (Auth::check())
                         <form action="{{route('films.comments.store', $film->id)}}" method="post" class="form-horizontal" id="comment-form" role="form">
                             @csrf
                             <div class="form-group">
@@ -97,6 +110,9 @@
                                 </div>
                             </div>
                         </form>
+                        @else
+                        <p>Please login to add comments. <a href="{{route('login')}}">Click here</a> to login</p>
+                        @endif
                     </div>
                 </div>
             </div>

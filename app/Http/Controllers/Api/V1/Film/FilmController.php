@@ -31,7 +31,6 @@ class FilmController extends Controller
             //saving film-slug-name
             $data = $request->all();
             $data['slug'] = strtolower(str_replace(" ", "-", $data['name']));
-            $data['user_id'] = 1;
             //Uploading image
             $data['photo'] = uploadImage($request->file('photo'));
             // Creating Film

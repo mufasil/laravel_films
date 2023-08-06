@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::prefix('films')->group(function () {
     Route::get('/', [FilmController::class, 'index'])->name('films.index');
+    Route::get('/create', [FilmController::class, 'create'])->name('films.create');
+    Route::post('/', [FilmController::class, 'store'])->name('films.store');
     Route::get('/{slug}', [FilmController::class, 'show'])->name('films.show');
     Route::post('/{id}/comments', [FilmController::class, 'storeComments'])->name('films.comments.store');
 });
