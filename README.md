@@ -34,5 +34,20 @@ php artisan key:generate
 Create a new database for your Laravel project and update the database connection details in the .env file. Then, run the database migrations to create the required tables:
 
 ```bash
-php artisan key:generate
+php artisan migrate
+```
+
+### 5. Run Seeders (Optional)
+
+If your project includes seeders to populate the database with initial data, you can run them using the following command:
+
+```bash
+php artisan db:seed
+```
+
+### 6. Serve the Application
+You can use Laravel's built-in development server to run your application locally:
+
+```bash
+php artisan serve
 ```
