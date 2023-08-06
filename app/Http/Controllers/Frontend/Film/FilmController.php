@@ -14,17 +14,30 @@ use Illuminate\Support\Facades\DB;
 
 class FilmController extends Controller
 {
+    /**  
+     * Display a listing of the Films.
+     * */
     public function index()
     {
         $films = Film::with(['comments'])->paginate(1);
         return view('front.films.index', compact('films'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+
     public function create()
     {
         $genres = Genre::all();
         return view('front.films.create', compact('genres'));
     }
+
+    /**
+     * Store a newly created resource in storage.
+     */
 
     public function store(StoreFilmRequest $request)
     {
@@ -48,11 +61,22 @@ class FilmController extends Controller
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\View\View
+     */
+
     public function show($slug)
     {
         $film = Film::where('slug', $slug)->first();
         return view('front.films.show', compact('film'));
     }
+
+    /**
+     * This will save multiple Comments via show Film interface form to attach with the film record
+     * 
+     */
 
     public function storeComments(StoreFilmCommentRequest $request, $id)
     {
