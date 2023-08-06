@@ -21,3 +21,18 @@ git clone https://github.com/mufasil/laravel_films.git
 ```bash
 cd <project_directory>
 composer install
+```
+
+### 3. Environment Configuration
+Rename the .env.example file to .env. Update the necessary environment variables in the .env file, such as the database connection details and application key. You can generate the application key using the following command:
+
+```bash
+php artisan key:generate
+```
+
+### 4. Database Setup
+Create a new database for your Laravel project and update the database connection details in the .env file. Then, run the database migrations to create the required tables:
+
+```bash
+php artisan key:generate
+```
