@@ -16,7 +16,8 @@ Follow these steps to install the Laravel project:
 
 ```bash
 git clone https://github.com/mufasil/laravel_films.git
-
+```
+### 2. Install Dependencies
 ```bash
 cd <project_directory>
 composer install
