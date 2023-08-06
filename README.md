@@ -1,4 +1,4 @@
-# Laravel Project Installation Guide
+# Laravel Films Project Installation Guide
 
 This document provides step-by-step instructions on how to install and set up a Laravel Films Project. Laravel is a popular PHP framework that simplifies the development of web applications. Before proceeding, ensure that you have the following prerequisites installed on your system:
 
@@ -16,3 +16,7 @@ Follow these steps to install the Laravel project:
 
 ```bash
 git clone https://github.com/mufasil/laravel_films.git
+
+```bash
+cd <project_directory>
+composer install
