@@ -13,7 +13,7 @@ class CreateFilmCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('film_comments', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('comment');
